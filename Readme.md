@@ -1,19 +1,42 @@
-En este proyecto contamos con una seed, que se implanta en el servidor al iniciarlo, cada vez que se reinicia borra los datos anteriores e inserta de nuevo los de la seed.
+Descripción en español:
 
-Dispone de diferentes endpoints que detallo a continuacion:
+Este proyecto implementa una API REST para la gestión de vehículos. Al iniciar el servidor, se ejecuta una seed que borra cualquier dato previo y reinserta los datos iniciales definidos, asegurando un entorno limpio en cada reinicio.
 
-- Tipo GET llamado "getAllAutos" para traer todos los documentos, tambien añadi un filtro por query por que acepta modelo o marca.
-Ejemplo:
-http://localhost:4001/api/autos?modelo=M2
+Endpoints disponibles:
+GET /api/autos
+Devuelve todos los vehículos. Soporta filtros por modelo o marca a través de query parameters.
+Ejemplo: http://localhost:4001/api/autos?modelo=M2
 
--Tipo GET llamado "getAutoByID" para traer un documento por su id 
-http://localhost:4001/api/autos/:id
+GET /api/autos/:id
+Devuelve un vehículo específico por su ID.
 
--Un tipo POST llamado "createAuto" para crear nuevos coches, introudiendo los datos en el body.
-http://localhost:4001/api/autos
+POST /api/autos
+Crea un nuevo vehículo enviando los datos en el cuerpo de la solicitud (body).
 
-- Un tipo PUT llamado "updateAutoById" para actualizar o añadir datos de un coche por su id. Los datos se introducen en el body del thunder client
-http://localhost:4001/api/autos/:id
+PUT /api/autos/:id
+Actualiza un vehículo existente por ID. Los nuevos datos se envían en el body.
 
--Un tipo DELETE llamado "deleteAuto" para borrar un coche con su id 
-http://localhost:4001/api/autos/:id
+DELETE /api/autos/:id
+Elimina un vehículo por su ID.
+
+Description in English:
+
+This project implements a REST API for managing vehicles. When the server starts, a predefined seed is executed. It clears previous data and inserts fresh seed data, ensuring a clean state on every restart.
+
+Available endpoints:
+GET /api/autos
+Retrieves all vehicles. Supports query filters by modelo or marca.
+Example: http://localhost:4001/api/autos?modelo=M2
+
+GET /api/autos/:id
+Retrieves a specific vehicle by its ID.
+
+POST /api/autos
+Creates a new vehicle by sending the data in the request body.
+
+PUT /api/autos/:id
+Updates an existing vehicle by ID. The data must be sent in the request body.
+
+DELETE /api/autos/:id
+Deletes a vehicle by its ID.
+
